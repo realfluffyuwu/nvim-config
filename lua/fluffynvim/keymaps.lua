@@ -10,6 +10,9 @@ vim.keymap.set("n", "<leader>w", fluffmatter.format)
 vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover)
 -- Show Diagnostic under cursor
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+-- Basic Omnicomplete
+vim.keymap.set("i", "<TAB>", "<C-x><C-o>")
+
 
 -- Update Packages
 vim.keymap.set("n", "<leader>up", vim.pack.update)
