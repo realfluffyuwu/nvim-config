@@ -1,9 +1,15 @@
 -- Normal Keymaps
-vim.g.mapleader = " "
--- vim.keymap.set("n", "<leader>e", vim.cmd.Ex) -- Fallback, Use Neotree instead
+vim.g.mapleader = ' '
+-- vim.keymap.set('n', '<leader>e', vim.cmd.Ex) -- Fallback, Use Neotree instead
 
--- Format
-vim.keymap.set("n", "<leader>F", vim.lsp.buf.format)
+-- Formatter
+local fluffmatter = require("fluffynvim/fluffmatter")
+vim.keymap.set("n", "<leader>w", fluffmatter.format)
+
+-- Hover
+vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover)
+-- Show Diagnostic under cursor
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 
 -- Update Packages
 vim.keymap.set("n", "<leader>up", vim.pack.update)
@@ -51,6 +57,3 @@ end, { desc = "Open NeoTree" })
 vim.keymap.set("n", "<leader>e", function()
     vim.cmd(":Neotree filesystem reveal current")
 end, { desc = "Open Filetree in current Buffer" })
-
--- Hover?
-vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover)
